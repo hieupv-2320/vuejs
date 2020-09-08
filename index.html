@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p> Day so: </p>
+        <li v-for="n in numbers" :key="n.id"> {{ n }}</li>
+        <p> So chan:  </p>
+        <li v-for="n in evenNumbers" :key="n.id"> {{ n }} </li>
+        <p> So le:  </p>
+        <li v-for="n in oldNumbers" :key="n.id"> {{ n }} </li>
+
+        <input v-model.trim="input">
+        <p> {{ input }} </p>
+        <div :class = "{active: hasActive}"></div> 
+        <div :class = "[hasActive ? activeClass : '', errorClass]" 
+            :style = "styleObject">
+            okkk </div>
+
+            <div v-if="loginType === 'username'">
+                <label>Username</label>
+                <input placeholder="Nhập username" key="user_name">
+            </div>
+            <div v-else>
+                <label>Email</label>
+                <input placeholder="Nhập địa chỉ email" key="email">
+            </div>
+            <button v-on:click="changeLoginType"> Thay đổi kiểu nhập </button>
+
+            <div :style="{ fontSize: postFontSize + 'em' }">
+                okk
+                <new-component @enlarge-text ="up"  @down= "postFontSize -= 1" v-bind:title='title'></new-component>
+            </div>
+            <async-component>
+                <p> Slot  </p>
+
+            </async-component>
+
+            <component-a> </component-a>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
