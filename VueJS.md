@@ -3,11 +3,14 @@
 ### Computed: 
 - Is Computed Property
 - you can write the expression in template like: 
+```
 <div id = "example">
 	{{ message.split(' ').reverse().join(' ') }} 
 </div>
+```
 - But above, we see that it is so urgly. Because it so difficult to maintain.
 so we use Computed . :
+```
 <div id = "example">
 	{{ message.reverse }} 
 </div>
@@ -23,6 +26,7 @@ var vm = new Vue({
     }
   }
 })
+```
 ### Computed và Method:
 	Computed sẽ lưu vào cache, computed không thể có tham số. sử dụng getter, setter 
 	Method k lưu vào cache 
@@ -32,6 +36,7 @@ var vm = new Vue({
 ### Watcher : 
 theo dõi mỗi khi có thay đổi thuộc tính. phải đặt trong watch và có tên trùng với properties
 vd: 
+	``` 
 	data: {
 		content : 'new'		
 	}
@@ -40,6 +45,7 @@ vd:
 			alert(content) //Khi co thay doi content thi se alert 		
 		}
 	}
+	```
 
 # 2 . Binding class, style: 
 ### Binding class: 
@@ -88,11 +94,15 @@ Sử dụng v-bind:style :
 #### v-for: 
 
 v-for với mảng :
+	```
 	v-for= "item in items"
 	v-for= "(item, index) in items" 
+	```
 v -for với object: 
+	```
 	v-for= "value in obj"
 	v-for = "(value, key) in obj"
+	```
 	
 
 sử dụng thêm :key="item.id" 
@@ -107,16 +117,21 @@ Truyền dữ liệu từ cha vào component thông qua **props**
 
 Gửi thông tin đến cha bằng sự kiện: $emit()
 
-Lưu ý : Khi dùng trong những tag đặc biệt như ul, li, table , render component sẽ lỗi khi sử dụng : <component></component>
+Lưu ý : Khi dùng trong những tag đặc biệt như ul, li, table , render component sẽ lỗi khi sử dụng : 
+```
+<component></component>
+```
 thay vào đấy ta sử dụng is="component"
-
-<table> 
-	<tr is="component"></tr>
-</table> 
+```
+	<table> 
+		<tr is="component"></tr>
+	</table> 
+```
 
 
 ### event handle: 
 v-on:click
+
 v-on:keyup.up (arrow up)
 
 
